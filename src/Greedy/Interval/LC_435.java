@@ -1,4 +1,4 @@
-package Greedy;
+package Greedy.Interval;
 
 //无重叠区间
 public class LC_435 {
