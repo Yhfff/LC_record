@@ -5,7 +5,12 @@ import org.omg.CORBA.MARSHAL;
 //打家劫舍
 public class LC_198 {
 
-    public int rob(int[] nums) {
+    public static void main(String[] args) {
+        int nums[] = {2,3,2};
+        System.out.println(rob(nums));
+    }
+
+    public static int rob(int[] nums) {
         int len = nums.length;
         /**
          *    dp[i][0]表示不偷窃第i个房屋得到的最高金额
@@ -25,7 +30,7 @@ public class LC_198 {
         int len = nums.length;
         if(len==1) return nums[0];
         /**
-         *    dp[i]表示偷窃到第i个房屋得到的最高金额
+         *    dp[i]表示偷窃到第i-1个房屋得到的最高金额
          */
         int dp[] = new int[len];
         dp[0] = nums[0];
