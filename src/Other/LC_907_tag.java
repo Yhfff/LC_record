@@ -4,7 +4,7 @@ package Other;
  * 10.28每日一题
  * 子数组的最小值之和
  */
-public class LC_907 {
+public class LC_907_tag {
     public static void main(String[] args) {
         int a[] = {11,81,94,43,3};
         System.out.println(sumSubarrayMins(a));

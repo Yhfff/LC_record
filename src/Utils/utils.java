@@ -24,5 +24,12 @@ public class utils {
     //3. 统计字符串中指定字符的个数 比如'0' 不用for循环
     String str = "000111";
     int charNum = str.length() - str.replace("0","").length();
-    //4.
+    //4. 使得两个整型相除保留小数位
+    int len = 8;
+    int Sum = 36;
+    /**
+     * 1. 将被除数转为float或者double
+     * 2. 将除数转为float或者double
+     */
+    float avg = (float)Sum/len;
 }

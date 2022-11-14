@@ -3,7 +3,7 @@ package Greedy;
 import java.util.Arrays;
 
 //根据身高重建队列
-public class LC_406 {
+public class LC_406_tag {
     public static void main(String[] args) {
         int a[][] = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
 //        for(int i=0;i<a.length;i++){

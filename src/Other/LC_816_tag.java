@@ -8,7 +8,7 @@ import java.util.SplittableRandom;
  * 11.7 每日一题
  * 模糊坐标
  */
-public class LC_816 {
+public class LC_816_tag {
 
     static List<String> res = new ArrayList<>();
     static StringBuilder path = new StringBuilder();
