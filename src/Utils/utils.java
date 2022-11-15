@@ -32,4 +32,13 @@ public class utils {
      * 2. 将除数转为float或者double
      */
     float avg = (float)Sum/len;
+    //5. 二维数组排序
+    public static void main(String[] args) {
+        int a[][] = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+        //仅按第一列元素升序排序
+        //Arrays.sort(a, (e1, e2) -> (e1[0] - e2[0]));
+        // 先按第一列元素升序排序，如果第一列相等再按第二列元素升序；
+        Arrays.sort(a, (e1,e2)->(e1[0]==e2[0]?(e1[1]-e2[1]):(e1[0]-e2[0])));
+    }
+
 }

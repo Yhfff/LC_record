@@ -3,9 +3,9 @@ package DP.Stock;
 
 /**
  * 买卖股票的最佳时机
+ * 选择一天买入 再选择一天卖出 只有一笔交易 问最大收益
  */
 public class LC_121 {
-    //选择一天买入 再选择一天卖出 只有一笔交易 问最大收益
     public int maxProfit(int[] prices) {
         /**
          * dp[i][0]表示第i天持有股票所得最多现金
