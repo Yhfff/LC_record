@@ -4,7 +4,7 @@ package Other;
  * 11.16每日一题
  * 全局倒置与局部倒置
  */
-public class LC_775 {
+public class LC_775_tag {
     public static boolean isIdealPermutation(int[] nums) {
         int len = nums.length;
         if(len==1) return true;
