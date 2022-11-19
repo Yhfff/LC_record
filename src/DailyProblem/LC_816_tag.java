@@ -1,8 +1,7 @@
-package Other;
+package DailyProblem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SplittableRandom;
 
 /**
  * 11.7 每日一题

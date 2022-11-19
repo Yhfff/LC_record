@@ -1,7 +1,4 @@
-package Other;
-
-import java.util.ArrayList;
-import java.util.List;
+package DailyProblem;
 
 //Leetcode_7 整数反转
 public class reverseInteger

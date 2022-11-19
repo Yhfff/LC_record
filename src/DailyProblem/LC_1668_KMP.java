@@ -1,6 +1,4 @@
-package Other;
-
-import javax.jws.soap.SOAPBinding;
+package DailyProblem;
 
 /**
  * 11.3 每日一题

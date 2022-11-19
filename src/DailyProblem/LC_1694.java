@@ -1,4 +1,4 @@
-package Other;
+package DailyProblem;
 
 /**
  * 10.1每日一题 重新格式化电话号码

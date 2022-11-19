@@ -1,8 +1,4 @@
-package Other;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+package DailyProblem;
 
 public class Main {
 

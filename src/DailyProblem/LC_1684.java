@@ -1,4 +1,4 @@
-package Other;
+package DailyProblem;
 
 /**
  * 11.8每日一题

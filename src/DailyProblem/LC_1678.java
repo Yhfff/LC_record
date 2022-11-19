@@ -1,7 +1,4 @@
-package Other;
-
-import java.util.HashMap;
-import java.util.Map;
+package DailyProblem;
 
 /**
  * 11.6每日一题
