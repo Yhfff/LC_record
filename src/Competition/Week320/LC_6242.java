@@ -22,54 +22,74 @@ public class LC_6242 {
         }
     }
 
+    /**
+     * 利用二叉搜索树的特性
+     * 中序遍历转成有序数组 然后在数组中进行二分查找
+     */
+    List<Integer> list = new ArrayList<>();
     public List<List<Integer>> closestNodes(TreeNode root, List<Integer> queries) {
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> temp;
+        traverse(root);
+        int len = list.size();
+//        int nums[] = new int[len];
+//        for(int i=0;i<len;i++){
+//            nums[i] = list.get(i);
+//        }
+        //开始查找
+        List<List<Integer>> ans = new ArrayList<>();
         for(int i=0;i<queries.size();i++){
-            temp = searchTree(root,queries.get(i));
-            res.add(temp);
+            List<Integer> temp = new ArrayList<>();
+            temp.add(findLeftMax(queries.get(i)));
+            temp.add(findRightMin(queries.get(i)));
+            ans.add(temp);
         }
-        return res;
+        return ans;
     }
 
-    public List<Integer> searchTree(TreeNode root,int val){
-        /**
-         * min为小于等于val的最大值
-         * max为大于等于val的最小值
-         */
-        int min = Integer.MIN_VALUE,max=Integer.MAX_VALUE;
-        List<Integer> temp = new ArrayList<>();
-        while(root!=null){
-            if(root.val==val) {
-                temp.add(val);
-                temp.add(val);
-                return temp;
-            }else if(root.val>val){ //root的值大于val 搜索root的左边
-                if(root.left!=null)
-                {
-                    root = root.left;
-                    min =  Math.max(min,root.val);
-                }
-            }else {//root的值小于val
-                if(root.right!=null){
-                    root = root.right;
-                    max = Math.min(max,root.val);
-                }
+    //中序遍历
+    public void traverse(TreeNode root){
+        if(root==null) return;
+        traverse(root.left); //左
+        list.add(root.val); //中
+        traverse(root.right);//右
+    }
+
+    //二分 查找小于等于target的最大值
+    public int findLeftMax(int target){
+        int left = 0;
+        int right = list.size()-1;
+        while(left<right){
+            //why right-left+1
+            int mid = left + (right-left+1)/2;
+            if(list.get(mid)>target){
+                //往左找 [0,mid-1]找
+                right = mid-1;
+
+            }else {//nums[mid]<=target
+                //往右找 [mid,length-1]
+                left = mid;
+                //System.out.println(left);
             }
         }
-        if(min==Integer.MIN_VALUE){
-            temp.add(-1);
-        }else
-            temp.add(min);
-        if(max==Integer.MAX_VALUE){
-            temp.add(-1);
-        }else
-            temp.add(max);
-        return temp;
-
+        return list.get(left)<=target?list.get(left):-1;
     }
 
 
-
+    //查找大于等于target的最小值
+    public int findRightMin(int target){
+        int left = 0;
+        int right = list.size()-1;//[0,length-1]查找
+        while(left<right){
+            //这种写法是防止溢出
+            int mid = left + (right-left)/2;
+            if(list.get(mid)<target){
+                //往右找 [mid+1,length-1]查找 因为mid肯定不符合
+                left = mid+1;
+            }else { //nums[mid]>=target  有可能等于 所以mid不能舍去
+                //往左找[0,mid]
+                right=mid;
+            }
+        }
+        return list.get(left)>=target?list.get(left):-1;
+    }
 
 }
