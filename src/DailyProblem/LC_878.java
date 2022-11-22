@@ -17,7 +17,7 @@ public class LC_878 {
     public int nthMagicalNumber(int n, int a, int b){
         long left = 2;
         //需要加上long 否则过大会溢出
-        long right = (long) Math.max(a,b)*n; //[2,(a,b)*n]
+        long right = (long) Math.min(a,b)*n; //[2,(a,b)*n]
         while(left<right){
             long mid = left + (right - left)/2;
             if((mid/a + mid/b - mid/lcm(a,b)) < n){
