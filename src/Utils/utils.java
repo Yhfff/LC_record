@@ -18,8 +18,9 @@ public class utils {
     }
     //递归
     public static int gcd2(int a,int b){
-        if(b==0) return a;
-        return gcd(b,a%b);
+//        if(b==0) return a;
+//        return gcd(b,a%b);
+        return b==0?a:gcd2(b,a%b);
     }
     //3. 统计字符串中指定字符的个数 比如'0' 不用for循环
     String str = "000111";

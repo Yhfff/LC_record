@@ -58,7 +58,7 @@ public class LC_6242 {
         int left = 0;
         int right = list.size()-1;
         while(left<right){
-            //why right-left+1
+            //right-left+1  不加1会造成死循环
             int mid = left + (right-left+1)/2;
             if(list.get(mid)>target){
                 //往左找 [0,mid-1]找
