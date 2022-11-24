@@ -1,6 +1,6 @@
 package LinkedList;
 //反转链表
-public class LeetCode_206
+public class LC_206
 {
     public static class ListNode
     {
