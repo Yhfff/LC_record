@@ -34,7 +34,7 @@ public class LC_809 {
             }
             //如果某个字符连续在S中出现的次数<在word中出现的次数 肯定不符合
             if(cntS<cntW) return false;
-            //如果某个字符连续在S中出现的次数>在word中出现的次数 但少于3次 也不符合
+            //如果某个字符连续在S中出现的次数>在word中出现的次数 但少于3次 也不符合 2>1
             if(cntS>cntW && cntS<3) return false;
         }
         //一定要保证两个字符串都遍历至末尾
