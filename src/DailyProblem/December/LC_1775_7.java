@@ -23,7 +23,7 @@ public class LC_1775_7 {
         for(int nums: nums1)
             cnt[6-nums]++;
         for(int nums: nums2)
-            cnt[nums-1]--;
+            cnt[nums-1]++;
 
         int ans = 0;
         int diff = sum2 - sum1;

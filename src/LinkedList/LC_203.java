@@ -1,6 +1,6 @@
 package LinkedList;
 //移除链表元素
-public class LeetCode_203
+public class LC_203
 {
     public static class ListNode
     {
