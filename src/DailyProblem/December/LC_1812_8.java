@@ -6,6 +6,7 @@ package DailyProblem.December;
  */
 public class LC_1812_8 {
     public boolean squareIsWhite(String coordinates) {
+        // 但其实还是建议将x y的起始下标统一 要么都从0开始 要么都从1开始
         int x = coordinates.charAt(0) - 'a';
         int y = coordinates.charAt(1) - '0';
         /**
