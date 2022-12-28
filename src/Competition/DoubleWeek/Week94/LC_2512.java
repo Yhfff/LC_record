@@ -28,18 +28,21 @@ public class LC_2512 {
         //使用链表来对集合进行排序，使用LinkedList，利于插入元素
         List<Map.Entry<Integer, Integer>> result = new LinkedList<>(mapEntries);
         //自定义比较器来比较链表中的元素
-        Collections.sort(result, new Comparator<Map.Entry<Integer, Integer>>() {
-            //基于entry的值（Entry.getValue()），来排序链表
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                int compare = o2.getValue().compareTo(o1.getValue());
-                if (compare == 0) {
-                    return o1.getKey().compareTo(o2.getKey());
-                } else {
-                    return compare;
-                }
-            }
-        });
+//        Collections.sort(result, new Comparator<Map.Entry<Integer, Integer>>() {
+//            //基于entry的值（Entry.getValue()），来排序链表
+//            @Override
+//            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+//                int compare = o2.getValue().compareTo(o1.getValue());
+//                if (compare == 0) {
+//                    return o1.getKey().compareTo(o2.getKey());
+//                } else {
+//                    return compare;
+//                }
+//            }
+//        });
+        // 使用lambda表达式
+        Collections.sort(result, (o1, o2) -> (o1.getValue()==o2.getValue() ?
+                o1.getKey()- o2.getKey() : o2.getValue()-o1.getValue()));
         int tmp = 0;
         List<Integer> ans = new ArrayList<>();
         for (Map.Entry<Integer, Integer> newEntry : result) {
